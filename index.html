@@ -527,6 +527,7 @@ const P=[
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 const FIXED=[["Function","Not a function"],["Even","Odd","Neither"]];
 P.forEach(p=>{ if(p.o){ const right=p.o[p.a]; const fx=FIXED.find(f=>f.length===p.o.length&&f.every(x=>p.o.includes(x))); const ord=fx?fx.slice():shuffle(p.o); p.o=ord; p.a=ord.indexOf(right);} });
+SLIDES.forEach(s=>{ const p=s.q; if(p&&p.o){ const right=p.o[p.a]; const fx=FIXED.find(f=>f.length===p.o.length&&f.every(x=>p.o.includes(x))); const ord=fx?fx.slice():shuffle(p.o); p.o=ord; p.a=ord.indexOf(right);} });
 
 let qi=0, res={}, earned=new Set(), fromResults=false;
 function renderQ(){
